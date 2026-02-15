@@ -1,0 +1,23 @@
+/* Custom Cursor Styles */
+.custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--text-primary);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    mix-blend-mode: difference;
+}
+
+body {
+    cursor: none;
+}
+
+a,
+button,
+.word,
+.project-card {
+    cursor: none;
+}

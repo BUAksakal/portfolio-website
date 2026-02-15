@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Engineering Portfolio</title>
+    <meta name="description"
+        content="AI Engineering Master's student portfolio showcasing projects and expertise in machine learning and artificial intelligence.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-modal.css">
+    <link rel="stylesheet" href="cursor-styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body class="dark-theme">
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-logo">
+            <span class="logo-bracket">[</span>
+            <span class="logo-text">AI.ENGINEER</span>
+            <span class="logo-bracket">]</span>
+        </div>
+        <button class="mobile-menu-btn" aria-label="Toggle navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <ul class="nav-menu">
+            <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+            <li><a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a></li>
+            <li><a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a></li>
+            <li><a href="Berke_Ugur_Aksakal_CV.pdf" class="nav-link cv-btn" download>CV</a></li>
+        </ul>
+        <div class="language-switcher">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="de">DE</button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="grid-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-subtitle">
+                <span class="bracket">//</span> <span class="subtitle-text" data-i18n="hero.subtitle">Berke Uğur Aksakal
+                    - AI Engineering
+                    Master's Student</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">
+                    <span class="word" data-word="Building" data-i18n="hero.title.building">Building</span>
+                    <span class="word" data-word="the" data-i18n="hero.title.the1">the</span>
+                    <span class="word" data-word="bridge" data-i18n="hero.title.bridge">bridge</span>
+                    <span class="word" data-word="between" data-i18n="hero.title.between">between</span>
+                </span>
+                <span class="title-line">
+                    <span class="highlight-word highlight-auto-animate" data-word="human intent"
+                        data-i18n="hero.title.humanIntent">human intent</span>
+                    <span class="word" data-word="and" data-i18n="hero.title.and">and</span>
+                </span>
+                <span class="title-line">
+                    <span class="word" data-word="machine execution" data-i18n="hero.title.machineExecution">machine
+                        execution</span>
+                </span>
+            </h1>
+            <p class="hero-description">
+                <span class="desc-line" data-i18n="hero.desc1">Exploring the frontiers of machine learning,</span>
+                <span class="desc-line" data-i18n="hero.desc2">computer vision, and generative models.</span>
+                <span class="desc-line" data-i18n="hero.desc3">Bridging theory with practical application.</span>
+            </p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span class="btn-text" data-i18n="hero.viewProjects">View Projects</span>
+                    <span class="btn-icon">→</span>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span class="btn-text" data-i18n="hero.getInTouch">Get in Touch</span>
+                    <span class="btn-icon">↗</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2 class="section-title" data-i18n="about.title">About</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-intro" data-i18n="about.intro">
+                        I am an AI Engineering Master's student focused on building intelligent systems that connect
+                        machine perception with real user experiences.
+                    </p>
+                    <p data-i18n="about.work">
+                        My work combines computer vision, sensor data processing, and applied machine learning with
+                        mobile development to turn AI ideas into practical applications. From vision-controlled robotics
+                        to AI-powered fitness apps, I enjoy transforming complex technology into usable products.
+                    </p>
+                    <p data-i18n="about.hobby">
+                        I am especially interested in creating AI-driven mobile experiences that bridge real-world data
+                        and everyday interaction.
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-value" data-i18n="about.stat1Value">Master's</div>
+                            <div class="stat-label" data-i18n="about.stat1Label">Student</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-i18n="about.stat2Value">Germany</div>
+                            <div class="stat-label" data-i18n="about.stat2Label">Location</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" data-i18n="about.stat3Value">AI/ML</div>
+                            <div class="stat-label" data-i18n="about.stat3Label">Focus</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills">
+                    <h3 class="skills-title" data-i18n="about.skillsTitle">Technical Focus</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <span class="skill-icon">→</span>
+                            <span data-i18n="about.skill1">AI-Powered Mobile Applications</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">→</span>
+                            <span data-i18n="about.skill2">Computer Vision & Real-Time Perception</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">→</span>
+                            <span data-i18n="about.skill3">Human–Machine Interaction</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">→</span>
+                            <span data-i18n="about.skill4">Sensor Data Processing</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">→</span>
+                            <span data-i18n="about.skill5">Edge AI & Embedded Integration</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon">→</span>
+                            <span data-i18n="about.skill6">Applied Machine Learning Systems</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+            </div>
+            <div class="projects-grid">
+                <!-- Project Card 1 - HERO PROJECT -->
+                <article class="project-card project-card-featured">
+                    <div class="project-image">
+                        <img src="images/robotic_hand_cad.png" alt="AI Vision-Controlled Robotic Hand" loading="lazy"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M20 7h-9"></path>
+                                <path d="M14 17H5"></path>
+                                <circle cx="17" cy="17" r="3"></circle>
+                                <circle cx="7" cy="7" r="3"></circle>
+                            </svg>
+                        </div>
+                        <span class="project-tag" data-i18n="projects.project1.tag">🥇 Bachelor's Thesis</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.project1.title">AI Vision-Controlled Robotic Hand</h3>
+                    <p class="project-description" data-i18n="projects.project1.desc">
+                        Real-time computer vision system integrated with robotic hardware for gesture-based control.
+                        Combines deep learning, embedded systems, and sensor fusion to bridge human intent with machine
+                        execution.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Computer Vision</span>
+                        <span class="tech-tag">Robotics</span>
+                        <span class="tech-tag">Real-Time AI</span>
+                        <span class="tech-tag">Embedded Systems</span>
+                    </div>
+                    <a href="https://github.com/BUAksakal/ai-vision-robotic-hand" target="_blank" class="project-link">
+                        <span data-i18n="projects.viewOnGithub">View on GitHub</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Project Card 2 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/dumbbelly_exact_ref.png" alt="AI-Powered Fitness Tracker" loading="lazy"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                            </svg>
+                        </div>
+                        <span class="project-tag" data-i18n="projects.project2.tag">📱 Master's Course</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.project2.title">AI-Powered Fitness Tracker</h3>
+                    <p class="project-description" data-i18n="projects.project2.desc">
+                        Cross-platform mobile fitness application with AI-driven workout recommendations.
+                        Combines Flutter development, Firebase backend, and Python-based analytics for personalized
+                        training insights.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">AI Analytics</span>
+                    </div>
+                    <div class="project-links-dual">
+                        <a href="https://github.com/BUAksakal/AI-FitnessTracker" target="_blank"
+                            class="project-link project-link-small">
+                            <span data-i18n="projects.appUI">App UI</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/BUAksakal/smart-fitness-recommender-system" target="_blank"
+                            class="project-link project-link-small">
+                            <span data-i18n="projects.aiSystem">AI System</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <line x1="7" y1="17" x2="17" y2="7"></line>
+                                <polyline points="7 7 17 7 17 17"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project Card 3 -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/lidar_map_visualization.png" alt="LiDAR-Based Mapping & SLAM" loading="lazy"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="2"></circle>
+                                <path d="M12 2v4"></path>
+                                <path d="M12 18v4"></path>
+                                <path d="m4.93 4.93 2.83 2.83"></path>
+                                <path d="m16.24 16.24 2.83 2.83"></path>
+                                <path d="M2 12h4"></path>
+                                <path d="M18 12h4"></path>
+                                <path d="m4.93 19.07 2.83-2.83"></path>
+                                <path d="m16.24 7.76 2.83-2.83"></path>
+                            </svg>
+                        </div>
+                        <span class="project-tag" data-i18n="projects.project3.tag">🛰️ Industry Internship</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.project3.title">LiDAR-Based Mapping & SLAM</h3>
+                    <p class="project-description" data-i18n="projects.project3.desc">
+                        Real-time environment perception and mapping system using LiDAR sensors.
+                        Developed during industry internship, combining sensor processing, SLAM algorithms, and Gazebo
+                        simulation for robotics navigation.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LiDAR</span>
+                        <span class="tech-tag">SLAM</span>
+                        <span class="tech-tag">Gazebo</span>
+                    </div>
+                    <a href="https://github.com/BUAksakal/lidar-slam-mapping-system" target="_blank"
+                        class="project-link">
+                        <span data-i18n="projects.viewOnGithub">View on GitHub</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Project Card 4 - Smart Water Meter -->
+                <article class="project-card">
+                    <div class="project-image">
+                        <img src="images/baylan_interface.png" alt="Smart Water Meter Monitoring System" loading="lazy"
+                            onerror="this.style.display='none'">
+                    </div>
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2v20"></path>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </div>
+                        <span class="project-tag" data-i18n="projects.project4.tag">💧 Industry Internship</span>
+                    </div>
+                    <h3 class="project-title" data-i18n="projects.project4.title">Smart Water Meter Monitoring System
+                    </h3>
+                    <p class="project-description" data-i18n="projects.project4.desc">
+                        Industrial IoT data engineering system for real-time smart water meter monitoring.
+                        Developed during internship at Baylan Water & Energy Meters, featuring payload decoding,
+                        multi-interface architecture, and event-driven data processing.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">LoRaWAN</span>
+                        <span class="tech-tag">Tkinter</span>
+                        <span class="tech-tag">Streamlit</span>
+                    </div>
+                    <a href="https://github.com/BUAksakal/smart-water-meter-monitoring-system" target="_blank"
+                        class="project-link">
+                        <span data-i18n="projects.viewOnGithub">View on GitHub</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </article>
+
+                <!-- Add More Projects Card -->
+                <article class="project-card project-card-more">
+                    <div class="more-content">
+                        <div class="more-icon">+</div>
+                        <h3 data-i18n="projects.moreTitle">More Projects Coming Soon</h3>
+                        <p data-i18n="projects.moreDesc">Currently working on exciting new AI research projects</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 class="contact-heading" data-i18n="contact.heading">Let's Connect</h3>
+                    <p class="contact-text" data-i18n="contact.text">
+                        I'm always interested in discussing AI research, collaboration opportunities,
+                        or innovative projects. Feel free to reach out!
+                    </p>
+                    <div class="contact-links">
+                        <a href="mailto:berkeuguraksakal17@gmail.com" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>berkeuguraksakal17@gmail.com</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/berke-ugur-aksakal/" target="_blank" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z">
+                                </path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/BUAksakal" target="_blank" class="contact-link">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                            <span>GitHub</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" action="https://formsubmit.co/berkeuguraksakal17@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New Message from Portfolio Contact Form">
+                    <input type="hidden" name="_next" value="https://yourportfolio.com/thanks.html">
+                    <!-- Optional redirection, we use AJAX -->
+                    <div class="form-group">
+                        <label for="name" data-i18n="contact.formName">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" data-i18n="contact.formEmail">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message" data-i18n="contact.formMessage">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.formSubmit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p data-i18n="footer.copyright">&copy; 2026 AI Engineering Portfolio — Designed & built by Berke Uğur
+                    Aksakal.</p>
+                <div class="footer-links">
+                    <a href="#about" data-i18n="nav.about">About</a>
+                    <a href="#projects" data-i18n="nav.projects">Projects</a>
+                    <a href="#contact" data-i18n="nav.contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="projectModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <button class="modal-close" id="modalClose" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <span class="modal-project-tag" id="modalTag"></span>
+                <h2 class="modal-title" id="modalTitle"></h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-section" id="modalVisualsSection" style="display: none;">
+                    <h3 class="modal-section-title">Project Visuals</h3>
+                    <div class="modal-visuals-grid" id="modalVisuals"></div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">About This Project</h3>
+                    <p class="modal-description" id="modalDescription"></p>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Technologies Used</h3>
+                    <div class="modal-tech-list" id="modalTech"></div>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Key Features</h3>
+                    <ul class="modal-features-list" id="modalFeatures"></ul>
+                </div>
+                <div class="modal-section">
+                    <h3 class="modal-section-title">Links</h3>
+                    <div class="modal-links" id="modalLinks"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="typewriter.js"></script>
+    <script src="project-modal.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
