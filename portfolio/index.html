@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- URLs below are relative — the site works on any domain (vercel.app or a custom one)
+         with no edits. Optional: add an absolute canonical once the final domain is set. -->
+    <title>Berke Uğur Aksakal — AI Engineer · Computer Vision &amp; Robotics</title>
+    <meta name="description"
+        content="AI engineer building perception systems that run on real hardware — computer vision, sensor data and real-time robotics. YOLO detectors, LiDAR navigation, a vision-controlled robotic hand, and a Fraunhofer IVI collaboration.">
+    <meta name="author" content="Berke Uğur Aksakal">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="color-scheme" content="light dark">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Berke Uğur Aksakal">
+    <meta property="og:title" content="Berke Uğur Aksakal — AI Engineer">
+    <meta property="og:description"
+        content="Computer vision, sensor data and real-time robotics. Selected projects, GitHub and contact.">
+    <meta property="og:image" content="images/work/aerial.jpg">
+    <meta property="og:image:width" content="1600">
+    <meta property="og:image:height" content="900">
+    <meta property="og:image:alt" content="Low-Altitude Aerial Detection — YOLOv8n, mAP@0.5 0.918, Fraunhofer IVI">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="de_DE">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Berke Uğur Aksakal — AI Engineer">
+    <meta name="twitter:description" content="Computer vision, sensor data and real-time robotics.">
+    <meta name="twitter:image" content="images/work/aerial.jpg">
+
+    <!-- Icons -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicon.svg">
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Self-hosted fonts (declared in styles.css) — preload the two most-used -->
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/inter-latin-ext.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="stylesheet" href="styles.css?v=17">
+    <script src="boot.js"></script>
+
+    <!-- Structured data: Person -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Berke Uğur Aksakal",
+        "image": "images/work/aerial.jpg",
+        "jobTitle": "AI Engineer",
+        "email": "mailto:berkeuguraksakal17@gmail.com",
+        "description": "Master's student in AI for Smart Sensors and Actuators. Applied computer vision, sensor data processing and real-time robotics.",
+        "sameAs": [
+            "https://github.com/BUAksakal",
+            "https://www.linkedin.com/in/berke-ugur-aksakal/"
+        ],
+        "worksFor": { "@type": "CollegeOrUniversity", "name": "Deggendorf Institute of Technology" },
+        "alumniOf": [
+            { "@type": "CollegeOrUniversity", "name": "Deggendorf Institute of Technology" },
+            { "@type": "CollegeOrUniversity", "name": "Afyon Kocatepe University" }
+        ],
+        "knowsAbout": ["Computer Vision", "Machine Learning", "Robotics", "YOLO", "PyTorch", "TensorFlow", "OpenCV", "ROS", "SLAM", "LiDAR", "Sensor Fusion", "Edge AI"],
+        "knowsLanguage": ["Turkish", "English", "German"],
+        "homeLocation": { "@type": "Place", "name": "Regensburg, Germany" }
+    }
+    </script>
+</head>
+
+<body>
+
+    <!-- Scroll-driven drone (background, Work + GitHub) -->
+    <canvas id="droneCv" aria-hidden="true"></canvas>
+
+    <!-- ===== Nav ===== -->
+    <nav class="nav" id="nav">
+        <div class="nav-right">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#work" class="nav-link" data-i18n="nav.work">Work</a></li>
+                <li><a href="#experience" class="nav-link" data-i18n="nav.exp">Experience</a></li>
+                <li><a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a></li>
+                <li><a href="#stack" class="nav-link" data-i18n="nav.more">GitHub</a></li>
+                <li><a href="#about" class="nav-link" data-i18n="nav.about">About</a></li>
+            </ul>
+            <div class="lang" role="group" aria-label="Language">
+                <button class="lang-btn active" data-lang="en">EN</button><span>/</span><button class="lang-btn" data-lang="de">DE</button>
+            </div>
+            <button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+                <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"
+                    stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.2"></circle><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8L6 18M18 6l1.8-1.8"></path></svg>
+            </button>
+            <a href="Berke_Ugur_Aksakal_CV.pdf" class="nav-cv" download data-i18n="nav.cv">CV</a>
+            <a href="#contact" class="nav-contact" data-i18n="nav.contact">Contact</a>
+            <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <header class="hero" id="top">
+        <h1 class="hero-name">
+            <span class="row">Berke Uğur</span>
+            <span class="row">Aksakal</span>
+        </h1>
+        <p class="hero-tagline" data-i18n="hero.tag">
+            AI engineer — <b>computer vision</b>, <b>sensor data</b> &amp; <b>real-time robotics</b>.
+        </p>
+        <a href="#work" class="hero-scroll" aria-label="Scroll">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round"><path d="M6 9l6 6 6-6"></path></svg>
+        </a>
+    </header>
+
+    <main>
+        <!-- ===== Work gallery ===== -->
+        <section class="section" id="work">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow" data-i18n="work.eyebrow">Selected projects</span>
+                    <h2 class="section-title" data-i18n="work.title">Work</h2>
+                </div>
+
+                <div class="gallery">
+                    <a class="g-item" data-reveal href="https://github.com/BUAksakal/low-altitude-aerial-detection"
+                        target="_blank" rel="noopener">
+                        <div class="g-media pad cover-card">
+                            <img src="images/work/aerial.jpg" alt="Low-Altitude Aerial Detection — YOLOv8n, mAP@0.5 0.918, Fraunhofer IVI" loading="lazy" width="1600" height="900">
+                        </div>
+                        <div class="g-cap">
+                            <span class="g-index">01</span>
+                            <span class="g-title">Low-Altitude Aerial Detection</span>
+                            <span class="g-meta">YOLOv8n · mAP@0.5 0.918 · Fraunhofer IVI <span class="g-arrow">↗</span></span>
+                        </div>
+                    </a>
+
+                    <a class="g-item" data-reveal href="https://github.com/BUAksakal/journey-resilience-agent"
+                        target="_blank" rel="noopener">
+                        <div class="g-media pad cover-card">
+                            <img src="images/work/journey.jpg" alt="Journey Resilience Agent — LangGraph state machine, LightGBM quantile model" loading="lazy" width="1600" height="900">
+                        </div>
+                        <div class="g-cap">
+                            <span class="g-index">02</span>
+                            <span class="g-title">Journey Resilience Agent</span>
+                            <span class="g-meta">LangGraph + LightGBM · live rail transfer-risk <span class="g-arrow">↗</span></span>
+                        </div>
+                    </a>
+
+                    <a class="g-item" data-reveal href="https://github.com/BUAksakal/lidar-slam-mapping-system"
+                        target="_blank" rel="noopener">
+                        <div class="g-media pad cover-card">
+                            <img src="images/work/lidar.jpg" alt="LiDAR SLAM Mapping System — sensor-to-motion pipeline in ROS and Gazebo" loading="lazy" width="1600" height="900">
+                        </div>
+                        <div class="g-cap">
+                            <span class="g-index">03</span>
+                            <span class="g-title">Reactive LiDAR Navigation</span>
+                            <span class="g-meta">ROS · 2D LiDAR → velocity commands · Gazebo <span class="g-arrow">↗</span></span>
+                        </div>
+                    </a>
+
+                    <a class="g-item" data-reveal href="https://github.com/BUAksakal/AI-FitnessTracker"
+                        target="_blank" rel="noopener">
+                        <div class="g-media pad cover-card">
+                            <img src="images/work/fitness.jpg" alt="Dumbbelly — AI workout tracker, Flutter · Provider · Hive" loading="lazy" width="1600" height="900">
+                        </div>
+                        <div class="g-cap">
+                            <span class="g-index">04</span>
+                            <span class="g-title">AI Fitness Tracker</span>
+                            <span class="g-meta">Flutter · Firebase · workout logging + AI recommendations <span class="g-arrow">↗</span></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GitHub marquee ===== -->
+        <section class="marquee-section" id="stack">
+            <div class="wrap marquee-head" data-reveal>
+                <span class="eyebrow" data-i18n="more.eyebrow">Open source</span>
+                <h2 class="section-title" data-i18n="more.title">On GitHub</h2>
+            </div>
+            <div class="marquee" id="marquee" aria-label="Repositories">
+                <div class="marquee-track" id="mqTrack"></div>
+            </div>
+        </section>
+
+        <!-- ===== Experience ===== -->
+        <section class="section" id="experience">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow" data-i18n="exp.eyebrow">Where</span>
+                    <h2 class="section-title" data-i18n="exp.title">Experience</h2>
+                </div>
+                <ol class="timeline" data-reveal>
+                    <li class="tl-item">
+                        <div class="tl-when">2025 – now</div>
+                        <div class="tl-body">
+                            <h3 class="tl-role">MSc · AI for Smart Sensors and Actuators</h3>
+                            <div class="tl-org">Deggendorf Institute of Technology · Germany</div>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-when">2020 – 2025</div>
+                        <div class="tl-body">
+                            <h3 class="tl-role" data-i18n="exp.eduRole">BSc · Electrical &amp; Electronics Engineering</h3>
+                            <div class="tl-org">Afyon Kocatepe University · Türkiye</div>
+                            <p class="tl-note" data-i18n="exp.eduNote">
+                                Bachelor's thesis: a real-time perception-to-actuator control loop driving a 3D-printed
+                                robotic hand (Python, OpenCV, YOLOv8, Arduino).
+                            </p>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-when">Aug 2024 – Sep 2024</div>
+                        <div class="tl-body">
+                            <h3 class="tl-role">Engineer Intern</h3>
+                            <div class="tl-org">Baylan Ölçü Aletleri — Water &amp; Energy Meters · İzmir, Türkiye</div>
+                            <p class="tl-note" data-i18n="exp.n2">
+                                Built a Python desktop tool for real-time device monitoring, data processing and
+                                visualization.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="tl-item">
+                        <div class="tl-when">Aug 2023 – Jan 2024</div>
+                        <div class="tl-body">
+                            <h3 class="tl-role">Engineer Intern</h3>
+                            <div class="tl-org">NISO Yazılım Teknolojileri A.Ş. · İzmir, Türkiye</div>
+                            <p class="tl-note" data-i18n="exp.n1">
+                                Built AI perception pipelines — YOLO-based detection and LiDAR-SLAM workflows for
+                                real-time perception. Benchmarked YOLOv3 against YOLOv8 for traffic-light detection;
+                                results presented at the IEEE TUAC 2023 conference.
+                            </p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- ===== Skills (3D tilt cards) ===== -->
+        <section class="section" id="skills">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow" data-i18n="skills.eyebrow">Stack</span>
+                    <h2 class="section-title" data-i18n="skills.title">Skills</h2>
+                </div>
+                <div class="skill-grid" data-reveal>
+                    <article class="skill-card" data-tilt>
+                        <span class="sc-sheen" aria-hidden="true"></span>
+                        <div class="sc-body">
+                            <h3 data-i18n="skills.c1">Computer Vision &amp; ML</h3>
+                            <ul>
+                                <li>YOLO (v3 / v8)</li><li>PyTorch · TensorFlow</li><li>OpenCV</li>
+                                <li>Fine-tuning · Roboflow</li><li>scikit-learn · SHAP</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="skill-card" data-tilt>
+                        <span class="sc-sheen" aria-hidden="true"></span>
+                        <div class="sc-body">
+                            <h3 data-i18n="skills.c2">Robotics &amp; Control</h3>
+                            <ul>
+                                <li>ROS</li><li>Gazebo simulation</li><li>SLAM · mapping</li>
+                                <li>EKF / state estimation</li><li>Serial · sensor fusion</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="skill-card" data-tilt>
+                        <span class="sc-sheen" aria-hidden="true"></span>
+                        <div class="sc-body">
+                            <h3 data-i18n="skills.c3">Languages &amp; Runtimes</h3>
+                            <ul>
+                                <li>Python</li><li>C++</li><li>Dart (Flutter)</li>
+                                <li>JavaScript</li><li>MATLAB · Arduino</li>
+                            </ul>
+                        </div>
+                    </article>
+                    <article class="skill-card" data-tilt>
+                        <span class="sc-sheen" aria-hidden="true"></span>
+                        <div class="sc-body">
+                            <h3 data-i18n="skills.c4">Tooling &amp; Data</h3>
+                            <ul>
+                                <li>Linux · Git</li><li>NumPy · Pandas</li><li>Firebase</li>
+                                <li>Matplotlib</li><li>Data pipelines</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+                <p class="skills-langs" data-reveal data-i18n="skills.spoken">
+                    Turkish (native) · English (C1) · German (A2)
+                </p>
+            </div>
+        </section>
+
+        <!-- ===== About ===== -->
+        <section class="section" id="about">
+            <div class="wrap">
+                <div class="section-head" data-reveal>
+                    <span class="eyebrow" data-i18n="about.eyebrow">Who</span>
+                    <h2 class="section-title" data-i18n="about.title">About</h2>
+                </div>
+                <div class="about-grid">
+                    <p class="about-lead" data-reveal data-i18n="about.lead">
+                        I'm Berke — a Master's student in <b>AI for Smart Sensors &amp; Actuators</b> with an Electrical
+                        Engineering background. I take models from a rough baseline to something that runs in the real
+                        world: full vision-to-actuator loops, YOLO detectors fine-tuned on custom data, LiDAR turned into
+                        live navigation. Experience from long-term internships at NISO and Baylan, and an
+                        academic–industry project with Fraunhofer IVI.
+                    </p>
+                    <ul class="about-facts" data-reveal data-reveal-delay="1">
+                        <li><span class="k" data-i18n="about.k1">Based</span><span class="v" data-i18n="about.v1">Cham → Regensburg · Oct 2026</span></li>
+                        <li><span class="k" data-i18n="about.k2">Study</span><span class="v">MSc AI · TH Deggendorf</span></li>
+                        <li><span class="k" data-i18n="about.k3">Status</span><span class="v" data-i18n="about.v3">Open to working-student roles</span></li>
+                        <li><span class="k" data-i18n="about.k4">Focus</span><span class="v" data-i18n="about.v4">Computer vision · Robotics</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact ===== -->
+        <section class="section contact" id="contact">
+            <div class="wrap" data-reveal>
+                <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+                <a class="contact-mail" href="mailto:berkeuguraksakal17@gmail.com">berkeuguraksakal17@gmail.com</a>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/berke-ugur-aksakal/" target="_blank" rel="noopener">LinkedIn ↗</a>
+                    <a href="https://github.com/BUAksakal" target="_blank" rel="noopener">GitHub ↗</a>
+                    <a href="Berke_Ugur_Aksakal_CV.pdf" download data-i18n="contact.cv">CV (PDF) ↓</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="wrap">
+            <p>© 2026 Berke Uğur Aksakal</p>
+            <p data-i18n="footer.note">Built from scratch</p>
+        </div>
+    </footer>
+
+    <script src="fabric.js?v=5"></script>
+    <script src="script.js?v=11"></script>
+    <script src="drone-scroll.js?v=7"></script>
+
+    <!-- Vercel Web Analytics (privacy-friendly, no cookies/banner).
+         Enable it in: Vercel project → Analytics tab. 404s harmlessly until then. -->
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+
+</html>

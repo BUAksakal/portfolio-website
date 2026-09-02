@@ -1,0 +1,12 @@
+{
+  "name": "Berke Uğur Aksakal — AI Engineer",
+  "short_name": "B. Aksakal",
+  "description": "AI engineer — computer vision, sensor data and real-time robotics.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/favicon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" }
+  ]
+}
